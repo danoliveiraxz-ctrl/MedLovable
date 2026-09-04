@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MedLovable</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark">M</div>
+        <div>
+          <h1>MedLovable</h1>
+          <p>Descreva. Revise. Publique.</p>
+        </div>
+        <button id="settingsToggle" class="icon-button" type="button" aria-label="Abrir configurações">⚙</button>
+      </header>
+
+      <section id="settingsPanel" class="settings-panel" hidden>
+        <div class="section-title">
+          <h2>Conexão</h2>
+          <span>As chaves principais ficam no servidor</span>
+        </div>
+        <label>
+          URL do backend
+          <input id="backendUrl" type="url" placeholder="http://localhost:8787" />
+        </label>
+        <label>
+          Senha de acesso
+          <input id="accessToken" type="password" autocomplete="off" placeholder="MEDLOVABLE_ACCESS_TOKEN" />
+        </label>
+        <button id="saveSettings" class="button button-light" type="button">Salvar conexão</button>
+      </section>
+
+      <section class="context-card">
+        <div class="status-line">
+          <span id="contextDot" class="dot"></span>
+          <strong id="contextLabel">Detectando projeto...</strong>
+        </div>
+        <label>
+          Repositório
+          <input id="repository" placeholder="usuario/repositorio" spellcheck="false" />
+        </label>
+        <label>
+          Branch
+          <input id="branch" value="main" spellcheck="false" />
+        </label>
+      </section>
+
+      <section class="command-card">
+        <div class="section-title">
+          <h2>O que deseja mudar?</h2>
+          <span id="charCount">0/4000</span>
+        </div>
+        <textarea
+          id="instruction"
+          maxlength="4000"
+          placeholder="Ex.: troque o tema para uma loja de móveis, use tons naturais e adicione orçamento pelo WhatsApp..."
+        ></textarea>
+        <div class="suggestions" aria-label="Sugestões de comandos">
+          <button type="button" data-prompt="Melhore o design e a responsividade sem alterar o conteúdo principal.">Melhorar design</button>
+          <button type="button" data-prompt="Encontre e corrija os problemas visuais e funcionais desta página.">Corrigir página</button>
+          <button type="button" data-prompt="Otimize esta landing page para conversão, mantendo um visual profissional.">Mais conversão</button>
+        </div>
+        <button id="analyzeButton" class="button button-primary" type="button">
+          <span>Analisar alteração</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </section>
+
+      <section id="resultPanel" class="result-panel" hidden>
+        <div class="section-title">
+          <h2>Proposta</h2>
+          <span id="planStatus" class="pill">Pronta para revisar</span>
+        </div>
+        <p id="summary" class="summary"></p>
+        <div id="warnings" class="warnings" hidden></div>
+        <div id="fileList" class="file-list"></div>
+        <button id="applyButton" class="button button-apply" type="button">Aplicar no GitHub</button>
+        <p class="safety-note">Um único commit será criado. Nada é aplicado antes desta confirmação.</p>
+      </section>
+
+      <section id="activityPanel" class="activity-panel" hidden>
+        <span class="spinner" aria-hidden="true"></span>
+        <div><strong id="activityTitle">Analisando projeto</strong><p id="activityText">Isso pode levar alguns instantes.</p></div>
+      </section>
+
+      <div id="toast" class="toast" role="status" hidden></div>
+    </main>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
