@@ -1,0 +1,30 @@
+MEDLOVABLE - INSTALAÇÃO NO WINDOWS
+=================================
+
+1. Instale o Node.js 20 ou mais recente: https://nodejs.org
+
+2. Crie uma chave da API da OpenAI na sua própria conta.
+
+3. Crie um token fine-grained no GitHub com acesso apenas aos repositórios
+   que deseja modificar e permissão de Contents: Read and write.
+
+4. Clique duas vezes em iniciar-medlovable.bat.
+
+5. Cole as duas credenciais quando a janela solicitar.
+
+6. Copie a "Senha para colocar na extensão" mostrada na janela.
+
+7. No Chrome, abra chrome://extensions, ative o Modo do desenvolvedor,
+   clique em Carregar sem compactação e selecione a pasta extension.
+
+8. Abra o MedLovable, clique na engrenagem e use:
+   URL do backend: http://localhost:8787
+   Senha de acesso: a senha copiada no passo 6
+
+9. Deixe a janela preta do iniciar-medlovable.bat aberta enquanto usar a extensão.
+
+IMPORTANTE
+----------
+Nunca envie suas chaves por mensagem e nunca publique o arquivo server/.env.
+O arquivo já está protegido pelo .gitignore.
+
