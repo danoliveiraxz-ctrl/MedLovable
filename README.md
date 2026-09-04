@@ -46,6 +46,10 @@ Variáveis opcionais:
 - `PORT`: padrão `8787`
 - `ALLOWED_ORIGIN`: origem autorizada; no teste local, o padrão aceita extensões Chrome
 
+### Instalação rápida no Windows
+
+Baixe o pacote completo, extraia e clique duas vezes em `iniciar-medlovable.bat`. O assistente pede a chave da OpenAI e o token do GitHub, gera a senha interna automaticamente e inicia o backend local. Consulte também `COMO-INSTALAR.txt`.
+
 ## 2. Instalar a extensão
 
 1. Abra `chrome://extensions`.
