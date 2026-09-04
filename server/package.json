@@ -6,7 +6,7 @@
   "engines": { "node": ">=20" },
   "scripts": {
     "start": "node src/server.js",
+    "setup": "node src/setup.js",
     "check": "node --check src/server.js"
   }
 }
-
